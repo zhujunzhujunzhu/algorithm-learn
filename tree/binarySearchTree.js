@@ -59,24 +59,64 @@ class BinarySearchTree {
    * @function search
    * @param {*} key
    */
-  search(key) { }
+  search(key) {
+    return this.searchNode(this.root, key)
+  }
+
+  searchNode(node, key) {
+    if (node === null) return false
+    if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
+      return this.searchNode(node.left, key)
+    } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
+      return this.searchNode(node.right, key)
+    } else {
+      return true
+    }
+  }
 
   /**中序遍历 
    * @function inOrderTraverse
    */
-  inOrderTraverse() {
+  inOrderTraverse(callback) {
+    this.inOrderTraverseNode(this.root, callback)
+  }
 
+  inOrderTraverseNode(node, callback) {
+    if (node !== null) {
+      this.inOrderTraverseNode(node.left, callback)
+      callback(node)
+      this.inOrderTraverseNode(node.right, callback)
+    }
   }
 
   /**前序遍历 
    * @function preOrderTraverse
    */
-  preOrderTraverse() { }
+  preOrderTraverse(callback) {
+    this.preOrderTraverseNode(this.root, callback)
+  }
+  preOrderTraverseNode(node, callback) {
+    if (node !== null) {
+      callback(node)
+      this.preOrderTraverseNode(node.left, callback)
+      this.preOrderTraverseNode(node.right, callback)
+    }
+  }
 
   /**后序遍历
    * @function postOrderTraverse
    */
-  postOrderTraverse() { }
+  postOrderTraverse(callback) {
+    this.postOrderTraverseNode(this.root, callback)
+  }
+
+  postOrderTraverseNode(node, callback) {
+    if (node !== null) {
+      this.postOrderTraverseNode(node.left, callback)
+      this.postOrderTraverseNode(node.right, callback)
+      callback(node)
+    }
+  }
 
   /**求最小值 
    * @function min
@@ -108,6 +148,11 @@ class BinarySearchTree {
     return current
   }
 
+
+  /**移除节点
+   * @function remove
+   * @param {*} key
+   */
   remove(key) { }
 }
 
@@ -125,3 +170,11 @@ bst.insert(6)
 console.log(bst.min().key)
 
 console.log(bst.max().key)
+
+console.log('前序：')
+bst.preOrderTraverse((node) => {
+  console.log(node.key)
+})
+console.log('----------------------')
+console.log(bst.search(7))
+console.log(bst.search(10))

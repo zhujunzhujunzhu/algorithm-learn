@@ -1,0 +1,24 @@
+{
+  "name": "algorithm-learn",
+  "version": "1.0.0",
+  "description": "本项目主要是针对于我对于算法的学习，主要会有两个方面的内容，第一个方面是，我的笔记，个人学习感受，另一个方面就是，具体的实现方式。",
+  "main": "utils.js",
+  "scripts": {
+    "docs:dev": "vuepress dev ",
+    "docs:build": "vuepress build "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhujunzhujunzhu/algorithm-learn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhujunzhujunzhu/algorithm-learn/issues"
+  },
+  "homepage": "https://github.com/zhujunzhujunzhu/algorithm-learn#readme",
+  "devDependencies": {
+    "vuepress": "^1.9.4"
+  }
+}

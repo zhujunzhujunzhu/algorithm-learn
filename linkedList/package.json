@@ -1,0 +1,13 @@
+{
+  "name": "linkedList",
+  "version": "1.0.0",
+  "description": "链表是一种数据结构，不同于数组的是，链表中的元素在内存中并不是连续存放的。相比于数组，添加或者移除元素的是不需要移动其它元素的。",
+  "main": "linkedList.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
